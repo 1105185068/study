@@ -1,0 +1,22 @@
+//现在给你不共线的三个点A,B,C的坐标，它们一定能组成一个三角形
+//现在让你判断A，B，C是顺时针给出的还是逆时针给出的？ 
+//顺时针则返回1，逆时针返回0 
+#include <iostream>
+
+int main(int argc, char** argv) {
+	double x1,y1,x2,y2,x3,y3;
+	double flag;
+	while(scanf("%lf%lf%lf%lf%lf%lf",&x1,&y1,&x2,&y2,&x3,&y3)){
+	if(x1==0&&x2==0&&x3==0&&y1==0&&y2==0&&y3==0){
+		break;
+	}
+	flag=(x2-x1)*(y3-y1)-(y2-y1)*(x3-x1);
+	if(flag>0){
+		printf("0");
+	}
+	else{
+		printf("1");
+	}
+	}
+	return 0;
+}
