@@ -1,0 +1,14 @@
+//定义：两个整数同时除以一个整数得到的余数相同，则二整数同余。记作a ≡ b(mod m)。
+//求解方法：整数a,b对模m同余的充要条件是(a-b)能被m整除，即m|(a-b) 
+#include <iostream>
+
+int main(int argc, char** argv) {
+	int m;
+	int a,b;
+	scanf("%d",&m);
+	scanf("%d%d",&a,&b); 
+	if((a-b)%m==0){
+		printf("a与b同余"); 
+	}
+	return 0;
+}
