@@ -1,0 +1,46 @@
+#include <iostream>
+
+//定义常数阶乘
+
+int fac[] = {1,1,2,6,24,120,720,5040,40320};
+
+//康托展开的逆运算,{1...n}的全排列，中的第k个数为s[]
+//即{1,2,3,4,5}的全排列，第96个数为45321
+
+void reverse_kangtuo(int n,int k,int s[]);
+int main(int argc, char** argv) {
+	int i,n;
+	int k,m;
+	int a[100],s[100];
+	scanf("%d",&n);
+	scanf("%d",&k);
+	for(i=0;i<n;i++){
+		scanf("%d",&s[i]);
+	}
+	reverse_kangtuo(n,k,s);
+	for(i=0;i<n;i++){
+		a[i]=s[i];
+	}
+	for(i=0;i<n;i++){
+		printf("%d",a[i]);
+	}
+	return 0;
+}
+void reverse_kangtuo(int n,int k,int s[])
+{
+    int i, j, t, vst[8]={0};
+    --k;
+    for (i=0; i<n; i++)
+    {
+        t = k/fac[n-i-1];
+        for (j=1; j<=n; j++)
+            if (!vst[j])
+            {
+                if (t == 0) break;
+                --t;
+            }
+        s[i] =j;
+        vst[j] =1;
+        k %= fac[n-i-1];
+    }
+}
