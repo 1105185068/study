@@ -1,0 +1,33 @@
+#include <iostream>
+
+int conter(int a[],int n);
+int main(int argc, char** argv){
+	int a[100];
+	int i,n,k;
+	scanf("%d",&n);
+	for(i=0;i<n;i++){
+		scanf("%d",&a[i]);
+	}
+	k=conter(a,n);
+	printf("比该数小的有%d个\n",k);
+	printf("该数为该序列的第%d个",k+1);
+	return 0;
+}
+int conter(int a[],int n){
+	int ans;
+	int i;
+	for(i=0;i<n;i++){
+		int x=0;
+		int m=1,c=1;
+		int j;
+		for(j=i+1;j<n;j++){
+			if(a[j]<a[i]){
+				x++;
+			}
+			m*=c;
+			c++;
+		}
+		ans+=x*m;
+	}
+	return ans;
+}
