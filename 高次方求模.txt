@@ -1,0 +1,24 @@
+//n的p次方很容易拆分为几个数相乘的形式。其中采用二分法拆分较为简单高效。
+//若p不是很大，可直接计算，不用拆分 
+#include <iostream>
+#include <math.h>
+int powmod(int n,int p,int m);
+int main(int argc, char** argv) {
+	int a,n,p,m;
+	scanf("%d%d%d",&n,&p,&m);
+	a=powmod(n,p,m);
+	printf("%d",a);
+	return 0;
+}
+int powmod(int n,int p,int m){
+	if(p==1){
+		return n%m;
+	}
+	int k=pow(n,p/2);
+	int tem=(k*k)%m;
+	if(p%2==1){
+		return tem=(tem*n)%m;
+	}
+	return tem;
+	return 0;
+}
