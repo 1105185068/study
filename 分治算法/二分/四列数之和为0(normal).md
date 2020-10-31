@@ -83,3 +83,5 @@ int main(int argc, char** argv) {
 	return 0;
 }
 ```
+
+**链接**<http://121.36.44.188/problem/1120>
