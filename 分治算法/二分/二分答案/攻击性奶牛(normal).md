@@ -1,4 +1,4 @@
-# 攻击性奶牛
+# 攻击性奶牛(normal)
 ## 问题描述
 Farmer John has built a new long barn, with N (2 <= N <= 100,000) stalls. The stalls are located along a straight line at positions x1,...,xN (0 <= xi <= 1,000,000,000). 
 
@@ -93,3 +93,5 @@ int main(int argc, char** argv) {
 	return 0;
 }
 ```
+
+**链接**<http://poj.org/problem?id=2456>
